@@ -6,7 +6,21 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <%= locals.name %>
+    <div class="group_info">
+        <h1 class="group">Wer bist du?</h1>
+        <ul class="group_users">
+            <% group.users.forEach(user => { %>
+                <button class="group_user"><h2><%= user %></h2></button>
+            <% }) %>
+        </ul>
+
+        <p class="group_container"><strong>Pairings:</strong></p>
+        <ul>
+            <% Object.entries(group.pairings).forEach(([gifter, receiver]) => { %>
+                <li class="group_solution"><%= gifter %> gifts <%= receiver %></li>
+            <% }) %>
+        </ul>
+    </div>
 
     <!-- Link the JavaScript file -->
     <script src="/js/script.js"></script>

@@ -124,7 +124,15 @@ function saveGroupsToFile(groups) {
 }
 
 router.get("/:id", (req, res) => {
-    res.render("group", { name: req.params.id });
+    const id = req.params.id;
+    const groups = readGroupsFile();
+
+    if (!(id in groups)) {
+        return res.status(400).json({ success: false, message: "Group id / name not found!" });
+    }
+
+    // Pass the specific group to the EJS template
+    res.render("group", { group: groups[id] });
 });
 
 module.exports = router;

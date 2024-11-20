@@ -2,3 +2,46 @@
     padding: 0;
     margin: 0;
 }
+
+body {
+    background-color: cadetblue;
+}
+
+.group {
+    width: 100%;
+    background-color: firebrick;
+    color: aliceblue;
+    text-align: center;
+}
+
+.group_info {
+    display: flow;
+    width: 100%;
+}
+
+.group_users {
+    margin: 20px 5% auto 5%;
+    width: 90%;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.group_user {
+    color: beige;
+    border-radius: 10px;
+    width: 100%;
+    height: 50px;
+    border: none;
+    outline: none;
+    background-color: brown;
+}
+
+.group_container {
+    display: none;
+}
+
+.group_solution {
+    display: none;
+}

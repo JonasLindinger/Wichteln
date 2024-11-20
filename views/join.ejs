@@ -2,16 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wichteln</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <div>
-        <input type="text" class="see_group_info_code">
-        <button type="Submit" class="see_group_info_btn">Bestätigen</button>
-    </div>
+<header class="header">
+    <h1>🎄 Wichteln 🎁</h1>
+</header>
 
-    <!-- Link the JavaScript file -->
-    <script src="/js/script.js"></script>
+<main class="main-content">
+    <section class="group_info">
+        <h2 class="section-title">Wer bist du?</h2>
+        <div class="users-container">
+            <% group.users.forEach(user => { %>
+                <button class="group_user"><%= user %></button>
+            <% }) %>
+        </div>
+
+        <div class="pairings-container">
+            <h2 class="section-title">Pairings:</h2>
+            <ul class="pairings-list">
+                <% Object.entries(group.pairings).forEach(([gifter, receiver]) => { %>
+                    <li class="pairing-item"><%= gifter %> 🎁 <%= receiver %></li>
+                <% }) %>
+            </ul>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <p>Frohe Weihnachten und viel Spaß beim Wichteln! 🎅</p>
+</footer>
+
+<script src="/js/script.js"></script>
 </body>
 </html>

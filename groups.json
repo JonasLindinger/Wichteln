@@ -11,20 +11,5 @@
       "Anna": "Felix",
       "Felix": "Jonas"
     }
-  },
-  "A7xab2n5": {
-    "groupName": "A7xab2n5",
-    "users": [
-      "Anna",
-      "Jonas",
-      "Felix",
-      "Max"
-    ],
-    "pairings": {
-      "Felix": "Max",
-      "Max": "Jonas",
-      "Jonas": "Anna",
-      "Anna": "Felix"
-    }
   }
 }

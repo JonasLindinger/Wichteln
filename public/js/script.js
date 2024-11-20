@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const addNewUserBtn = document.querySelector(".add_user_btn");
     const newUserName = document.querySelector(".newUserName");
-    if (!(addNewUserBtn == null || addNewUserBtn == undefined)) {
+    if (!(addNewUserBtn === null || addNewUserBtn === undefined)) {
         addNewUserBtn.addEventListener("click", (e) => addUser());
     }
     function addUser() {
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const submit_new_group_btn = document.querySelector(".submit_new_group_btn");
-    if (!(submit_new_group_btn == null || submit_new_group_btn == undefined)) {
+    if (!(submit_new_group_btn === null || submit_new_group_btn === undefined)) {
         submit_new_group_btn.addEventListener("click", (e) => submitNewGroupForm())
     }
     async function submitNewGroupForm() {
@@ -109,16 +109,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const seeGroupInfoBtn = document.querySelector(".see_group_info_btn");
     const seeGroupInfoCode = document.querySelector(".see_group_info_code");
-    if (!(seeGroupInfoBtn == null || seeGroupInfoBtn == undefined)) {
+    if (!(seeGroupInfoBtn === null || seeGroupInfoBtn === undefined)) {
         seeGroupInfoBtn.addEventListener("click", (e) => seeGroupInfo())
     }
     async function seeGroupInfo() {
-        if (seeGroupInfoCode.value.length !== 8) {
+        const groupName = seeGroupInfoCode.value.trim();
+        if (groupName.length !== 8) {
             alert("Code is invalid.");
             return;
         }
 
         console.log("redirect");
-        window.location.href = "/groups/" + seeGroupInfoCode.value;
+        window.location.href = "/groups/" + groupName;
     }
 });

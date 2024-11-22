@@ -77,6 +77,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const joinGroupBtn = document.querySelector(".join_group_btn");
+    const joinGroupInput = document.querySelector(".join_group_input");
+    if (!(joinGroupBtn === null || joinGroupBtn === undefined || joinGroupInput === null || joinGroupInput === undefined)) {
+        joinGroupBtn.addEventListener("click", (e) => joinGroup())
+    }
+    function joinGroup() {
+        window.location.href = "/groups/" + joinGroupInput.value;
+    }
+
     const submit_new_group_btn = document.querySelector(".submit_new_group_btn");
     if (!(submit_new_group_btn === null || submit_new_group_btn === undefined)) {
         submit_new_group_btn.addEventListener("click", (e) => submitNewGroupForm())
@@ -122,4 +131,10 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log("redirect");
         window.location.href = "/groups/" + groupName;
     }
+
+    document.querySelectorAll(".group_user").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+            window.location.href = window.location + "?name=" + btn.name;
+        })
+    });
 });

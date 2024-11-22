@@ -125,26 +125,26 @@ function saveGroupsToFile(groups) {
 
 router.get('/:id', (req, res) => {
     const { id } = req.params; // Get the ID from the URL path
-    const { name } = req.query; // Get the 'name' query parameter, if present
+    const { name } = req.query; // Get the "name" query parameter, if present
     const groups = readGroupsFile();
 
     // Check if group exists
     if (!(id in groups)) {
-        return res.status(400).json({ success: false, message: "Group ID not found!" });
+        return res.status(404).render("error", { message: "Group ID not found!" });
     }
 
     const group = groups[id];
 
-    // If no 'name' query parameter, render the group page
+    // If no "name" query parameter, render the group page
     if (!name) {
         return res.render("group", { group });
     }
 
-    // Check if the name exists in the group's 'users' array
+    // Check if the name exists in the group's "users" array
     if (group.users.includes(name)) {
-        return res.json({ success: true, pairing: group.pairings[name] });
+        return res.render("pairing", { pairing: group.pairings[name] })
     } else {
-        return res.status(404).json({ success: false, message: "User not found in group!" });
+        return res.status(404).render("error", { message: "User not found in group!" });
     }
 });
 

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Wuuting</title>
+    <!-- Externe CSS für Symbole -->
+    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+          integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+          referrerpolicy="no-referrer" rel="stylesheet"/>
+    <link href="../CSS/style.css" rel="stylesheet">
+</head>
+<body>
+<!-- Navigationsleiste -->
+<header>
+    <!-- Todo: Validator benutzen -->
+        <!-- Todo: Statt links icons für social media nutzen. -->
+        <!-- Todo: Breadcrumps -->
+        <!-- Todo: Produktfilter -->
+        <!-- Todo: Produkt zubehör vorschläge -->
+        <!-- Todo: Switch typen (interaktiv) -->
+        <!-- Todo: Interaktives Element einfügen siehe PDF | Irgendwas auf der Startseite? -->
+        <!-- Todo: Innovative Präsentation siehe PDF | Mehrere Bilder pro Produkt, die man durchklicken kann? -->
+        <!-- Todo: Bessere Produktbeschreibung | Fett gedruckte Schrift. Besser Formatiert.-->
+        <nav class="navbar">
+            <!-- Logo immer zu sehen-->
+            <div class="logo"><a href="start.html">Wuuting</a></div>
+            <!-- Normales menu (standardmäßig zusehen, außer wenn der screen zu klein ist.) -->
+            <ul class="links">
+                <li><a href="keyboards.html">Tastaturen</a></li>
+                <li><a href="keycaps.html">Tasten</a></li>
+                <li><a href="#">Switches</a></li>
+                <li><a href="accessoires.html">Zubehör</a></li>
+            </ul>
+            <a class="action_btn" href="contact.html">Kontakt</a>
+            <!-- Suche -->
+            <div class="searchbar_container"  style="visibility: hidden;">
+                <div class="searchbar">
+                    <input placeholder="Suche..." type="text">
+                    <a href="#">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    </input>
+                </div>
+            </div>
+    
+            <!-- Mobile menu button und menu alternative(dropdown) (nicht immer zu sehen dank CSS) -->
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="dropdown_menu">
+                <ul>
+                    <li><a href="keyboards.html">Tastaturen</a></li>
+                    <li><a href="keycaps.html">Tasten</a></li>
+                    <li><a href="#">Switches</a></li>
+                    <li><a href="accessoires.html">Zubehör</a></li>
+                    <li><a class="action_btn" href="contact.html">Kontakt</a></li>
+                </ul>
+            </div>
+        </nav>
+</header>
+
+<!-- Website -->
+<div class="banner">
+    <div class="banner_content">
+        <h1>Erlebe die Revolution der Wuuting-Tastaturen</h1>
+        <p>Analoge Steuerung, Präzision und Schnelligkeit in Perfektion. Für Gamer und Kreative entwickelt.</p>
+        <a href="keyboards.html" class="banner_btn">Unsere Tastaturen</a>
+    </div>
+</div>
+<div class="popular_products">
+    <div class="popular_products_header">
+        <h1>Beliebte Produkte</h1>
+    </div>
+    <div class="popular_product_container">
+        <div class="popular_product">
+            <img src="../Bilder/Keyboards/Wooting-60-HE.png" alt="Wooting 60 HE">
+            <h1><a href="Product-Wooting-60-HE.html">Wooting 60 HE</a></h1>
+            <p>Die kompakteste analoge mechanische Tastatur der Welt. Perfekt für Gaming und Esports.</p>
+        </div>
+        <div class="popular_product">
+            <img src="../Bilder/Keyboards/Wooting-80-HE.png" alt="Wooting 80 HE">
+            <h1><a href="Product-Wooting-80-HE.html">Wooting 80 HE</a></h1>
+            <p>Erlebe präzise analoge Eingaben in einem Tenkeyless-Format mit makellosem Design.</p>
+        </div>
+        <div class="popular_product">
+            <img src="../Bilder/Keyboards/Wooting-UwU.png" alt="Wooting UwU">
+            <h1><a href="Product-Wooting-UwU.html">Wooting UwU</a></h1>
+            <p>Ein Traum für Liebhaber einzigartiger Designs. Tolle Features mit einem verspielten Twist.</p>
+        </div>
+    </div>
+</div>
+<div class="starting_tutorials">
+    <h1>Hall-Effect (HE) in Tastaturen</h1>
+    <ul>
+        <li>
+            <!-- Video-->
+            <iframe src="https://www.youtube.com/embed/H3_gCliOoR4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </li>
+        <li>
+            <p>
+                Der Hall-Effekt in Tastaturen nutzt magnetische Felder zur Registrierung von Tastenanschlägen. Unter jeder Taste befindet sich ein kleiner Magnet, während sich ein Hall-Sensor darüber befindet. Wenn die Taste gedrückt wird, verändert sich der Abstand zwischen Magnet und Sensor, was eine Spannung erzeugt und den Tastenanschlag registriert. Diese Technologie bietet den Vorteil einer hohen Langlebigkeit, da keine mechanischen Kontakte abnutzen, was die Tastatur besonders widerstandsfähig und verschleißfrei macht. Hall-Effekt-Tastaturen zeichnen sich zudem durch eine schnelle Reaktionszeit und hohe Präzision aus, was sie ideal für anspruchsvolle Anwendungen wie Gaming oder professionelles Tippen macht. Ein weiterer Vorteil ist die geringe Geräuschentwicklung, da die Tastenanschläge im Vergleich zu mechanischen Schaltern leiser sind.</p>
+        </li>
+    </ul>
+</div>
+<div class="starting_tutorials">
+    <h1>Was ist Rapid trigger?</h1>
+    <ul>
+        <li>
+            <p>Rapid Trigger ist eine Funktion, die in leistungsstarken Tastaturen integriert ist und darauf abzielt, die Reaktionsfähigkeit und Genauigkeit bei schnellem Tippen oder Gaming zu verbessern. Sie ermöglicht eine schnelle Tastenbetätigung, was bedeutet, dass jeder Tastenanschlag mit minimaler Verzögerung registriert wird, selbst bei schnellen, aufeinander folgenden Eingaben. Dies ist besonders nützlich für Gamer, Vielschreiber oder alle, die schnelle, wiederholte Aktionen auf der Tastatur durchführen müssen, ohne Eingabeverluste oder Verzögerungen zu erleben. Tastaturen mit Rapid Trigger-Technologie beinhalten häufig mechanische Schalter, N-Key Rollover und Anti-Ghosting, um sicherzustellen, dass mehrere Tasten gleichzeitig ohne Konflikte gedrückt werden können. Ob bei kompetitiven Spielen oder einem schnellen Projekt – die Rapid Trigger-Technologie verbessert das gesamte Benutzererlebnis, indem sie eine blitzschnelle und präzise Tastenreaktion bietet.</p>
+        </li>
+        <li>
+            <!-- Video-->
+            <iframe src="https://www.youtube.com/embed/_Sl-T6iQr8U" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </li>
+    </ul>
+</div>
+<footer>
+    <div class="footer_content">
+        <h3>Wuuting</h3>
+        <p>Alles rund um Tastaturen</p>
+        <ul class="socials">
+            <li><a href="https://www.facebook.com/wootingkb/?locale=de_DE" target="_blank"><i
+                    class="fa fa-facebook"></i></a></li>
+            <li><a href="https://x.com/WootingKB?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
+                   target="_blank"><i
+                    class="fa-brands fa-x-twitter"></i></a></li>
+            <li><a href="https://www.instagram.com/wootingkb/?hl=de" target="_blank"><i class="fa fa-instagram"></i></a>
+            </li>
+            <li><a href="https://www.linkedin.com/company/wooting" target="_blank"><i class="fa fa-linkedin"></i></a>
+            </li>
+        </ul>
+    </div>
+    <div class="footer_bottom">
+        <p>&copy; 2024 Wuuting | Von Jonas Lindinger TGI 11/4</p>
+        <p>
+            <a href="datenschutz.html">Datenschutz</a> |
+            <a href="impressum.html">Impressum</a> |
+            <a href="wiederrufs-rueckgaberecht.html">Wiederrufs- und Rückgaberechte</a>
+        </p>
+    </div>
+</footer>
+
+<!-- JavaScript -->
+<script src="../JavaScript/script.js"></script>
+</body>
+</html>

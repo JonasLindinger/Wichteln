@@ -5,7 +5,7 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background: #f9f3e9;
+    background: lightcoral;
     color: #333;
     margin: 0;
     padding: 0;
@@ -13,7 +13,7 @@ body {
 }
 
 .start {
-    height: 100vh;
+    height: calc(100vh - 160px - 100px);
     display: flex;
     flex-direction: column; /* Stack elements vertically */
     align-items: center;
@@ -39,21 +39,66 @@ body {
 
 header {
     background: #c0392b;
+    height: 100px;
     color: white;
     padding: 20px;
 }
 
-.start_button {
+.header_text {
+    transform: translateY(-50%);
+    margin-top: 40px;
+    font-size: 4rem;
+}
+
+.header_info {
+    font-size: 2rem;
+    transform: translateY(-100%);
+}
+
+.join {
+    height: calc(100vh - 160px - 100px);
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+    justify-content: center;
+}
+
+.join_group_input {
+    max-height: 100px;
     width: 90%;
-    margin: 10px 5%;
     border-radius: 30px;
     align-items: center;
-    font-size: 5rem;
+    font-size: 6vw;
+    color: white;
+    border: none;
+    cursor: pointer;
+    max-width: 800px;
+}
+
+.join_group_btn {
+    max-height: 100px;
+    width: 90%;
+    border-radius: 30px;
+    align-items: center;
+    font-size: 6vw;
+    color: white;
+    border: none;
+    cursor: pointer;
+    max-width: 800px;
+}
+
+.start_button {
+    max-height: 100px;
+    width: 90%;
+    border-radius: 30px;
+    align-items: center;
+    font-size: 6vw;
     background: #27ae60;
     color: white;
     border: none;
-    padding: 10px 20px;
     cursor: pointer;
+    padding: 10px 20px;
+    max-width: 800px;
 }
 
 button {
@@ -70,7 +115,7 @@ button {
 input {
     color: #f9f3e9;
     background: orange;
-    padding: 10px 20px;
+    padding: 10px 0;
     border: none;
     border-radius: 5px;
 }
@@ -79,18 +124,19 @@ footer {
     padding-top: 10px;
     position: fixed;
     width: 100%;
-    height: 80px;
+    height: 160px;
     background: #333333;
     bottom: 0;
+}
+
+footer p {
+    color: #f9f3e9;
+    font-size: 5rem;
 }
 
 footer a {
     color: orange;
     text-decoration: none;
-    margin: 0 5px;
-}
-
-footer p {
-    color: #f9f3e9;
-    font-size: 2rem;
+    margin: 20px;
+    font-size: 2.5rem;
 }

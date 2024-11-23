@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Wichteln</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <header>
-        <h1>Info</h1>
+        <h1 class="header_text">Dein Wichtel</h1>
+        <p class="header_info">Hier siehst du die Person, die du beschenken darfst.</p>
     </header>
     <main>
-        <p>Die Person, die du beschenken darfst ist: </p>
-        <h1><%= locals.pairing %></h1>
+        <p class="pair_info_tip">Die Person, die du beschenken darfst ist: </p>
+        <h1 class="pair_info"><%= locals.pairing %></h1>
     </main>
+    <div class="spacer"></div>
     <footer>
         <p>Wichteln</p>
         <a href="impressum.html">Impressum</a>

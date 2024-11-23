@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Wichteln</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
@@ -12,16 +13,17 @@
     </header>
     <main>
         <div class="create">
-            <label>
+            <label class="new_user_container">
                 <input type="text" class="newUserName" placeholder="Name des Teilnehmers...">
+                <button class="add_user_btn">+</button>
             </label>
-            <button class="add_user_btn">+</button>
-            <ul class="user_list"></ul>
-            <h2>Ausnahmen</h2>
+            <ul class="new_user_list"></ul>
+            <h2 class="exclusions_text">Ausnahmen</h2>
             <div class="exclusions"></div>
             <button class="submit_new_group_btn">Erstellen</button>
         </div>
     </main>
+    <div class="spacer"></div>
     <footer>
         <p>Wichteln</p>
         <a href="impressum.html">Impressum</a>

@@ -3,28 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>Wichteln</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <header>
-        <h1>Gruppen-Dashboard</h1>
-    </header>
-    <main>
-        <h2>Teilnehmer</h2>
-        <p>Klicke auf deinen Namen, um herauszufinden, wen du beschenken darfst.</p>
-        <ul class="user_list">
-            <% group.users.forEach(user => { %>
-                <button class="group_user" name="<%= user %>"><%= user %></button>
-            <% }) %>
-        </ul>
-    </main>
-    <footer>
-        <p>Wichteln</p>
-        <a href="impressum.html">Impressum</a>
-        <a href="datenschutz.html">Datenschutz</a>
-    </footer>
+<header>
+    <h1 class="header_text">Gruppe</h1>
+    <p class="header_info">Schaue in eine Gruppe rein, um deinen Wichtel zu sehen</p>
+</header>
 
-    <!-- Link the JavaScript file -->
-    <script src="/js/script.js"></script>
+<main>
+    <h1 class="group_users">Teilnehmer</h1>
+    <p class="group_users_tip">Klicke auf deinen Namen, um herauszufinden, wen du beschenken darfst.</p>
+    <ul class="user_list">
+        <% group.users.forEach(user => { %>
+            <li><button class="group_user" name="<%= user %>"><%= user %></button></li>
+        <% }) %>
+    </ul>
+</main>
+
+<div class="spacer"></div>
+
+<footer>
+    <p>Wichteln</p>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+</footer>
+
+<script src="/js/script.js"></script>
 </body>
 </html>

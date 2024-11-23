@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    const userList = document.querySelector(".user_list");
+    const userList = document.querySelector(".new_user_list");
     function updateUserList() {
         // Clear
         userList.innerHTML = "";

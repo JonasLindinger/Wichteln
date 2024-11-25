@@ -1,34 +1,3 @@
 {
-  "J7CaW2o4": {
-    "groupName": "J7CaW2o4",
-    "users": [
-      "Jonas",
-      "Anna",
-      "Felix"
-    ],
-    "pairings": {
-      "Jonas": "Anna",
-      "Anna": "Felix",
-      "Felix": "Jonas"
-    }
-  },
-  "s71s58s1": {
-    "groupName": "s71s58s1",
-    "users": [
-      "q",
-      "w",
-      "e",
-      "a",
-      "s",
-      "d"
-    ],
-    "pairings": {
-      "a": "q",
-      "q": "w",
-      "w": "d",
-      "d": "s",
-      "s": "e",
-      "e": "a"
-    }
-  }
+
 }

@@ -17,5 +17,5 @@ const groupRouter = require("./routes/groups");
 app.use("/groups", groupRouter);
 
 // Start the server
-const PORT = 3457;
+const PORT = 3458;
 app.listen(PORT, () => console.log("Server running on http://localhost:" + PORT));

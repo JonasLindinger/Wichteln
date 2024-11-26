@@ -25,20 +25,25 @@ router.post("/new", (req, res) => {
         return res.status(400).json({ success: false, message: "At least 3 users are required." });
     }
 
+    // Validate exclusions
     const validExclusions = exclusions.filter(([user1, user2]) => {
         return users.includes(user1) && users.includes(user2) && user1 !== user2;
     });
 
-    console.log("Users: " + users.toString() + ", exclusions: " + exclusions);
+    // Generate pairings
     const pairings = assignPairings(users, validExclusions);
 
     if (!pairings) {
         return res.status(400).json({ success: false, message: "Impossible to create valid pairings with the exclusions." });
     }
 
+    // Read the existing groups from the file
     const groups = readGroupsFile();
 
+    // Add the new group to the groups object
     groups[groupName] = { groupName, users, pairings };
+
+    // Save the updated groups object back to the file
     saveGroupsToFile(groups);
 
     res.json({ success: true, groupName });
@@ -83,78 +88,26 @@ function generateGroupName(users) {
 
 // Pairing algorithm
 function assignPairings(users, exclusions) {
+    const shuffledUsers = [...users].sort(() => Math.random() - 0.5);
     const pairings = new Map();
-    const pickedUsers = [];
-    let shuffledUsers = [...users].sort(() => Math.random() - 0.5);
 
-    exclusions.forEach(([person, dontUse]) => {
-        shuffledUsers.remove(person);
+    for (let i = 0; i < shuffledUsers.length; i++) {
+        const gifter = shuffledUsers[i];
+        const receiver = shuffledUsers[(i + 1) % shuffledUsers.length];
 
-        pickedUsers.forEach((user) => {
-            shuffledUsers.remove(user);
-        });
-
-        exclusions.forEach(([gifter, exeption]) => {
-            if (gifter === person) {
-                shuffledUsers.remove(exeption);
+        // Todo: Do better exclusions
+        if (false) {
+            // Check if the gifter → receiver is in the exclusions list
+            if (exclusions.some(([user1, user2]) => user1 === gifter && user2 === receiver)) {
+                return null; // Exclusion makes it impossible for gifter to gift receiver
             }
-        });
-
-        const randomUser = shuffledUsers[Math.floor(Math.random() * shuffledUsers.length)];
-        pairings.set(person, shuffledUsers[randomUser]);
-        pickedUsers.add(randomUser);
-
-        shuffledUsers = [...users].sort(() => Math.random() - 0.5);
-    });
-
-    shuffledUsers.forEach(([user]) => {
-        if (!pairings.has(user)) {
-            shuffledUsers.remove(user);
-
-            pickedUsers.forEach((user) => {
-                shuffledUsers.remove(user);
-            });
-
-            const randomUser = shuffledUsers[Math.floor(Math.random() * shuffledUsers.length)];
-            pairings.set(user, shuffledUsers[randomUser]);
-            pickedUsers.add(randomUser);
-
-            shuffledUsers = [...users].sort(() => Math.random() - 0.5);
         }
-    });
 
-    if (!validatePairings(pairings, users, exclusions)) {
-        return null;
+        // If no exclusion, make the pairing
+        pairings.set(gifter, receiver);
     }
 
     return Object.fromEntries(pairings);
-}
-
-// Validator to check if pairings are valid
-function validatePairings(pairings, users, exclusions) {
-    const pairedUsers = new Set();
-
-    for (const [gifter, receiver] of pairings) {
-        if (pairedUsers.has(gifter) || pairedUsers.has(receiver)) {
-            return false; // Duplicate pairing
-        }
-        if (!users.includes(gifter) || !users.includes(receiver)) {
-            return false; // Invalid user
-        }
-        pairedUsers.add(gifter);
-        pairedUsers.add(receiver);
-
-        // Check exclusions
-        if (exclusions.some(([user1, user2]) => user1 === gifter && user2 === receiver)) {
-            return false; // Exclusion violation
-        }
-    }
-
-    if (pairedUsers.size !== users.length) {
-        return false; // Not all users are paired
-    }
-
-    return true;
 }
 
 // Function to read the groups file

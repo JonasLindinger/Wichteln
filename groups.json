@@ -1,50 +1,9 @@
 {
-  "s7PsR2s5": {
-    "groupName": "s7PsR2s5",
+  "H7WeQ6H6": {
+    "groupName": "H7WeQ6H6",
     "users": [
-      "Jonas",
-      "Anna",
-      "Felix",
-      "a",
-      "w",
-      "q",
-      "e",
-      "s",
-      "d",
-      "g",
-      "r",
-      "t",
-      "z",
-      "f",
-      "gh",
-      "h",
-      "jk",
-      "zui"
-    ],
-    "pairings": {
-      "a": "w",
-      "w": "gh",
-      "gh": "r",
-      "r": "Jonas",
-      "Jonas": "zui",
-      "zui": "Anna",
-      "Anna": "Felix",
-      "Felix": "f",
-      "f": "jk",
-      "jk": "s",
-      "s": "g",
-      "g": "q",
-      "q": "h",
-      "h": "e",
-      "e": "z",
-      "z": "d",
-      "d": "t",
-      "t": "a"
-    }
-  },
-  "O7Fv22O3": {
-    "groupName": "O7Fv22O3",
-    "users": [
+      "Oma",
+      "Opa",
       "Eva",
       "Helena",
       "Paula",
@@ -54,23 +13,21 @@
       "Valentin",
       "Max",
       "Anna",
-      "Felix",
-      "Oma",
-      "Opa"
+      "Felix"
     ],
     "pairings": {
-      "Eva": "Anna",
-      "Anna": "Susanne",
+      "Helena": "Eva",
+      "Eva": "Paula",
+      "Paula": "Opa",
+      "Opa": "Olivia",
+      "Olivia": "Max",
+      "Max": "Anna",
+      "Anna": "Valentin",
+      "Valentin": "Susanne",
       "Susanne": "Julia",
       "Julia": "Felix",
-      "Felix": "Helena",
-      "Helena": "Max",
-      "Max": "Paula",
-      "Paula": "Valentin",
-      "Valentin": "Oma",
-      "Oma": "Olivia",
-      "Olivia": "Opa",
-      "Opa": "Eva"
+      "Felix": "Oma",
+      "Oma": "Helena"
     }
   }
 }

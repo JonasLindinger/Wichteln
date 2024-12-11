@@ -143,9 +143,10 @@ header {
 }
 
 .user_list {
-    max-height: calc(100vh - 150px); /* Adjust this value based on how tall you want the scrollable area */
+    max-height: calc(90vh - 150px); /* Adjust this value based on how tall you want the scrollable area */
     overflow-y: auto;  /* Enable vertical scrolling */
     padding-right: 10px; /* Add some space to the right to account for the scrollbar */
+    margin-bottom: 100px;
     list-style: none;
 }
 

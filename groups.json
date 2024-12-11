@@ -1,3 +1,76 @@
 {
-
+  "s7PsR2s5": {
+    "groupName": "s7PsR2s5",
+    "users": [
+      "Jonas",
+      "Anna",
+      "Felix",
+      "a",
+      "w",
+      "q",
+      "e",
+      "s",
+      "d",
+      "g",
+      "r",
+      "t",
+      "z",
+      "f",
+      "gh",
+      "h",
+      "jk",
+      "zui"
+    ],
+    "pairings": {
+      "a": "w",
+      "w": "gh",
+      "gh": "r",
+      "r": "Jonas",
+      "Jonas": "zui",
+      "zui": "Anna",
+      "Anna": "Felix",
+      "Felix": "f",
+      "f": "jk",
+      "jk": "s",
+      "s": "g",
+      "g": "q",
+      "q": "h",
+      "h": "e",
+      "e": "z",
+      "z": "d",
+      "d": "t",
+      "t": "a"
+    }
+  },
+  "O7Fv22O3": {
+    "groupName": "O7Fv22O3",
+    "users": [
+      "Eva",
+      "Helena",
+      "Paula",
+      "Olivia",
+      "Susanne",
+      "Julia",
+      "Valentin",
+      "Max",
+      "Anna",
+      "Felix",
+      "Oma",
+      "Opa"
+    ],
+    "pairings": {
+      "Eva": "Anna",
+      "Anna": "Susanne",
+      "Susanne": "Julia",
+      "Julia": "Felix",
+      "Felix": "Helena",
+      "Helena": "Max",
+      "Max": "Paula",
+      "Paula": "Valentin",
+      "Valentin": "Oma",
+      "Oma": "Olivia",
+      "Olivia": "Opa",
+      "Opa": "Eva"
+    }
+  }
 }

@@ -18,24 +18,16 @@ router.get("/join", (req, res) => {
 });
 
 router.post("/new", (req, res) => {
-    const { users, exclusions } = req.body;
+    const { users } = req.body;
     const groupName = generateGroupName(users);
 
     if (users.length < 3) {
         return res.status(400).json({ success: false, message: "At least 3 users are required." });
     }
 
-    // Validate exclusions
-    const validExclusions = exclusions.filter(([user1, user2]) => {
-        return users.includes(user1) && users.includes(user2) && user1 !== user2;
-    });
 
     // Generate pairings
-    const pairings = assignPairings(users, validExclusions);
-
-    if (!pairings) {
-        return res.status(400).json({ success: false, message: "Impossible to create valid pairings with the exclusions." });
-    }
+    const pairings = assignPairings(users);
 
     // Read the existing groups from the file
     const groups = readGroupsFile();
@@ -87,21 +79,13 @@ function generateGroupName(users) {
 }
 
 // Pairing algorithm
-function assignPairings(users, exclusions) {
+function assignPairings(users) {
     const shuffledUsers = [...users].sort(() => Math.random() - 0.5);
     const pairings = new Map();
 
     for (let i = 0; i < shuffledUsers.length; i++) {
         const gifter = shuffledUsers[i];
         const receiver = shuffledUsers[(i + 1) % shuffledUsers.length];
-
-        // Todo: Do better exclusions
-        if (false) {
-            // Check if the gifter → receiver is in the exclusions list
-            if (exclusions.some(([user1, user2]) => user1 === gifter && user2 === receiver)) {
-                return null; // Exclusion makes it impossible for gifter to gift receiver
-            }
-        }
 
         // If no exclusion, make the pairing
         pairings.set(gifter, receiver);

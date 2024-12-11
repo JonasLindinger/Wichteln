@@ -19,7 +19,6 @@ main {
     padding: 0;
     margin: 0;
     width: 100%;
-    height: calc(100vh - 80px - 60px);
 }
 
 .start {
@@ -33,6 +32,10 @@ main {
 .create {
     font-size: 2rem;
     text-align: left;
+    max-height: calc(100vh - 100px); /* Adjust this value based on how tall you want the scrollable area */
+    overflow-y: auto;  /* Enable vertical scrolling */
+    padding-right: 10px; /* Add some space to the right to account for the scrollbar */
+    list-style: none;
 }
 
 .new_user_container {
@@ -121,7 +124,6 @@ header {
 
 .submit_new_group_btn {
     transform: translateX(-50%);
-    margin-top: 10px;
     margin-left: 50%;
     width: 200px;
     height: 40px;
@@ -140,6 +142,13 @@ header {
     font-size: 2rem;
 }
 
+.user_list {
+    max-height: calc(100vh - 150px); /* Adjust this value based on how tall you want the scrollable area */
+    overflow-y: auto;  /* Enable vertical scrolling */
+    padding-right: 10px; /* Add some space to the right to account for the scrollbar */
+    list-style: none;
+}
+
 .user_list li {
     display: flex;
     height: 60px;
@@ -153,6 +162,7 @@ header {
 
 .new_user_list {
     margin-left: 5px;
+    margin-bottom: 200px;
 }
 
 .new_user_list li {
@@ -171,12 +181,14 @@ header {
 }
 
 .exclusions_text {
+    display: none;
     color: #f9f3e9;
     text-align: center;
     font-size: 1.2rem;
 }
 
 .exclusions {
+    display: none;
     color: #f9f3e9;
     margin-top: 10px;
     margin-left: 5px;
@@ -185,6 +197,7 @@ header {
 }
 
 .exclusions div input {
+    display: none;
     color: #27ae60;
     width: 18px;
     height: 18px;
@@ -233,29 +246,4 @@ input {
     padding: 10px 0;
     border: none;
     border-radius: 5px;
-}
-
-.spacer {
-    height: 200px;
-}
-
-footer {
-    box-shadow: #333333 0 0 30px 0;
-    position: fixed;
-    width: 100%; /* Ensure footer takes full width */
-    height: 80px;
-    background: #333333;
-    bottom: 0;
-}
-
-footer p {
-    color: #f9f3e9;
-    font-size: 3rem;
-}
-
-footer a {
-    color: orange;
-    text-decoration: none;
-    margin: 5px;
-    font-size: 1rem;
 }

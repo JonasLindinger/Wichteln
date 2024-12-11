@@ -44,37 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
             li.appendChild(removeBtn);
             userList.appendChild(li);
         });
-
-        updateExclusionOptions();
-    }
-
-    const exclusionsList = document.querySelector(".exclusions");
-    function updateExclusionOptions() {
-        // Clearing list
-        exclusionsList.innerHTML = "";
-
-        // Creating an exception checkbox for each user to each user
-        users.forEach((user1) => {
-           users.forEach((user2) => {
-               if (user1 != user2) {
-                   // Creating exception.
-                   const exclusion = document.createElement("div");
-                   const checkbox = document.createElement("input");
-                   checkbox.type = "checkbox";
-                   checkbox.className = "exclusion";
-                   checkbox.value = user1 + "," + user2;
-
-                   const label = document.createElement("label");
-                   label.htmlFor = checkbox.className;
-                   label.innerText = user1 + " und " + user2 + " dürfen kein paar sein.";
-
-                   exclusion.appendChild(checkbox);
-                   exclusion.appendChild(label);
-
-                   exclusionsList.appendChild(exclusion);
-               }
-           });
-        });
     }
 
     const joinGroupBtn = document.querySelector(".join_group_btn");
@@ -96,11 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        const exclusions = Array.from(document.querySelectorAll('input[class="exclusion"]:checked')).map(
-            (checkbox) => checkbox.value.split(',')
-        );
 
-        const data = { users, exclusions };
+        const data = { users };
         const response = await fetch("/groups/new", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
